@@ -62,12 +62,3 @@ by utilizing a certain polynomial identity, such that expresses the function's g
 - `build-pdf.yml` builds project using `TeXLive`. Triggered on `pull_request`, `push` to `develop` branch
 - `build-and-deploy-pdf.yml` builds project using `TeXLive` and deploys to `GitHub Pages`. Triggered on `push` to `main`
   branch
-
-## Template example
-
-Compiled document looks like as follows
-
-<p align="center">
-  <img src="img/template_example.PNG" alt="template_example"/>
-  <img src="img/template_example2.PNG" alt="template_example"/>
-</p>
