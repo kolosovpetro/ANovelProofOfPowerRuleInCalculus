@@ -1,9 +1,11 @@
-# GitHub LaTeX Template
+# A novel proof of power rule in Calculus
 
-[![Build PDF](https://github.com/kolosovpetro/github-latex-template/actions/workflows/build-pdf.yml/badge.svg)](https://github.com/kolosovpetro/github-latex-template/actions/workflows/build.yml/badge.svg)
-[![Build and Deploy PDF](https://github.com/kolosovpetro/github-latex-template/actions/workflows/build-and-deploy-pdf.yml/badge.svg)](https://github.com/kolosovpetro/github-latex-template/actions/workflows/build-and-deploy.yml/badge.svg)
+## Abstract
 
-LaTeX template for GitHub including general CI/CD actions and Mathematica templates.
+The power rule for derivatives, typically proven through the limit definition of derivative in conjunction with the
+Binomial theorem.
+In this manuscript we present an alternative approach to proving the power rule,
+by utilizing a certain polynomial identity, such that expresses the function's growth.
 
 - https://dev.azure.com/PetroKolosovProjects/github-latex-template
 
