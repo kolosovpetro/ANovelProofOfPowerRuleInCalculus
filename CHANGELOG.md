@@ -12,3 +12,6 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Initial template updates
 - README updated
 - Rename files
+- Add MSC subject classification
+- Add keywords
+- Add references
