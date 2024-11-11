@@ -2,10 +2,12 @@
 
 ## Abstract
 
-The power rule for derivatives, typically proven through the limit definition of derivative in conjunction with the
-Binomial theorem.
-In this manuscript we present an alternative approach to proving the power rule,
-by utilizing a certain polynomial identity, such that expresses the function's growth.
+In Calculus, the power rule is a fundamental result stating that the derivative of a power
+function is given by the product of the exponent and the base raised to the power of the exponent minus one.
+Typically, the power rule is proven using the limit definition of the derivative alongside the Binomial theorem.
+In this manuscript, we present an alternative approach to proving the power rule, utilizing a specific polynomial
+identity that captures the function's growth.
+This method omits the direct use of the Binomial theorem, offering a distinct way to the same result.
 
 - https://dev.azure.com/PetroKolosovProjects/github-latex-template
 
