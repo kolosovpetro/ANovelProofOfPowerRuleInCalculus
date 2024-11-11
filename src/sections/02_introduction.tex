@@ -31,10 +31,11 @@ So that
 However, is the binomial theorem the only polynomial identity to express the growth rate?
 Well, not really, we can utilize different approach to express polynomial growth.
 Consider the following identity for odd powers~\cite{kolosov2024history, kolosov2016link, kolosov2022106, kolosov2023polynomial}
-\begin{align*}
+\begin{equation}
 (x-2a)
     ^{2m+1} = \sum_{r=0}^{m} \coeffA{m}{r} \sum_{k=a+1}^{x-a} (k-a)^r (x-k-a)^r
-\end{align*}
+    \label{eq:odd-power-identity}
+\end{equation}
 where $\coeffA{m}{r}$ is a real coefficient defined recursively
 \begin{equation}
     \label{eq:definition_coefficient_a}
@@ -48,3 +49,15 @@ where $\coeffA{m}{r}$ is a real coefficient defined recursively
     \end{cases}
 \end{equation}
 where $\bernoulli{t}$ are Bernoulli numbers~\cite{bateman1953higher} such that $\bernoulli{1}=\frac{1}{2}$.
+Therefore, by setting $a=-\frac{h}{2}$ in~\eqref{eq:odd-power-identity} we can express the growth rate of odd powers as
+\begin{align*}
+(x+h)
+    ^{2m+1} = \sum_{r=0}^{m} \coeffA{m}{r}
+    \sum_{k=-\frac{h}{2}+1}^{x+\frac{h}{2}} \left( k+\frac{h}{2} \right)^{r} \left(x-k+\frac{h}{2} \right)^{r}
+\end{align*}
+Thus,
+\begin{align*}
+    \odv{x^{2m+1}}{x}
+    &= \lim_{h \to 0} \frac{1}{h} \left[ \sum_{r=0}^{m} \coeffA{m}{r} \sum_{k=-\frac{h}{2}+1}^{x+\frac{h}{2}} \left( k+\frac{h}{2} \right)^{r} \left(x-k+\frac{h}{2} \right)^{r}- \sum_{r=0}^{m} \coeffA{m}{r} \sum_{k=1}^{x} k^r (x-k)^r\right] \\
+    &= \lim_{h \to 0} \frac{1}{h} \left[ \sum_{r=0}^{m} \coeffA{m}{r} \left( \sum_{k=-\frac{h}{2}+1}^{x+\frac{h}{2}} \left( k+\frac{h}{2} \right)^{r} \left(x-k+\frac{h}{2} \right)^{r}- \sum_{k=1}^{x} k^r (x-k)^r \right) \right] \\
+\end{align*}
