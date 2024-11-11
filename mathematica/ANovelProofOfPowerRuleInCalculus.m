@@ -23,6 +23,18 @@ timeScaleDerivaitveOddPower::usage= "Returns the partial time scale derivative o
 
 theorem::usage= "Returns the partial dynamic equation identity such that is main result of the manuscript."
 
+ConvolutionOfBinomial::usage = "Returns an identity (x-2a)^{2m+1} + 1."
+ConvolutionOfBinomial[x_, a_, m_] := Sum[A[m, r]* Sum[(k - a)^r * (x - a - k)^r, {k, a, x - a}], {r, 0, m}];
+
+ConvolutionOfBinomial1::usage = "Returns an identity (x-2a)^{2m+1} - 1."
+ConvolutionOfBinomial1[x_, a_, m_] := Sum[A[m, r]* Sum[(k - a)^r * (x - a - k)^r, {k, a+1, x - a-1}], {r, 0, m}];
+
+ConvolutionOfBinomial2::usage = "Returns an identity (x-2a)^{2m+1}"
+ConvolutionOfBinomial2[x_, a_, m_] := Sum[A[m, r]* Sum[(k - a)^r * (x - a - k)^r, {k, a+1, x - a}], {r, 0, m}];
+
+ConvolutionOfBinomial3::usage = "Returns an identity (x-2a)^{2m+1}"
+ConvolutionOfBinomial3[x_, a_, m_] := Sum[A[m, r]* Sum[k^r * (x-k+a)^r, {k, 1, x+a}], {r, 0, m}];
+
 Begin["`Private`"]
 
 Unprotect[Power];
@@ -53,4 +65,6 @@ theorem[m_] := Expand[timeScaleDerivativeX[m, Global`x, sigma[Global`x]] + timeS
 End[ ]
 
 EndPackage[ ]
+
+
 

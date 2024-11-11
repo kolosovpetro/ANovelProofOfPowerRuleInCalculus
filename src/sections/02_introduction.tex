@@ -1,40 +1,85 @@
-Your introduction here.
-Include some references~\cite{bayour2017truly,benkhettou2016conformable,caputo2009time,martins2009calculus,
-    GithubSource_2022, Sloane_theencyclopedia}.
-Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-of type and scrambled it to make a type specimen book.
-It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
-recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
-Figure example
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{../img/latex_configuration}
-    ~\caption{Figure example.}\label{fig:figure}
-\end{figure}
-
-\begin{equation*}
-     \llceil \nobarfrac{a}{b} \rrfloor_{m}
-\end{equation*}
-\begin{equation*}
-    \llceilCoefficient{a}{b}{m}
-\end{equation*}
-
-And for any natural $m$ we have polynomial identity
+Power rule can be considered as the one of the most fundamental rules in calculus.
+Most of us remember this law from the first calculus course
+\begin{align*}
+    \odv{x^n}{x} = nx^{n-1}
+\end{align*}
+where $n$ is a constant.
+One of the common strategies to prove the power rule is by utilizing limit definition
+of derivative in conjunction with binomial theorem.
+Recall the limit form of derivative
+\begin{align*}
+    \odv{f(x)}{x} = \lim_{h \to 0} \left[ \frac{f(x+h) - f(x)}{h} \right]
+\end{align*}
+where $f(x)$ is defined over $\mathbb{R}$ and at least of smoothness class $C^1$.
+Let be $f(x) = x^n$ with constant $n$.
+Then its derivative is
+\begin{align*}
+    \odv{x^n}{x} = \lim_{h \to 0} \left[ \frac{(x+h)^n - x^n}{h} \right]
+\end{align*}
+Notice that we can express the function's growth $(x+h)^n$ by using binomial theorem
+\begin{align*}
+(x+h)
+    ^n = \sum_{k=0}^{n} \binom{n}{k} x^{n-k} h^k
+\end{align*}
+So that
+\begin{align*}
+    \odv{x^n}{x} &= \lim_{h \to 0} \left[ \frac{1}{h} \sum_{k=1}^{n} \binom{n}{k} x^{n-k} h^k \right] \\
+    &= \lim_{h \to 0} \left[ \binom{n}{1} x^{n-1} +  \binom{n}{2} x^{n-2} h
+    + \binom{n}{3} x^{n-3} h^2 + \dots + \binom{n}{n} x^{0} h^n \right] \\
+    &= \binom{n}{1} x^{n-1}
+\end{align*}
+However, is the binomial theorem the only polynomial identity to express the growth rate?
+Well, not really, we can utilize different approach to express polynomial growth.
+Consider the following identity for odd powers~\cite{kolosov2024history, kolosov2016link, kolosov2022106, kolosov2023polynomial}
 \begin{equation}
-    x^m = \sum_{k=1}^{m} T(m, k) \centralFactorial{x}{k}
-    \label{eq:knuth-power-identity}
+(x-2a)
+    ^{2m+1} = \sum_{r=0}^{m} \coeffA{m}{r} \sum_{k=a+1}^{x-a} (k-a)^r (x-k-a)^r
+    \label{eq:odd-power-identity}
 \end{equation}
-where $\centralFactorial{x}{k}$ denotes central factorial defined by
-\begin{equation*}
-    \centralFactorial{x}{n} = x \fallingFactorial{x+\frac{n}{2}-1}{n-1}
-\end{equation*}
-where $\fallingFactorial{n}{k} = n (n-1) (n-2) \cdots (n-k+1)$ denotes falling factorial in Knuth's notation.
-In particular,
-\begin{equation*}
-    \centralFactorial{x}{n}
-    = x \left( x+\frac{n}{2}-1 \right) \left( x+\frac{n}{2}-1 \right) \cdots \left (x+\frac{n}{2}-n-1 \right)
-    = x \prod_{k=1}^{n-1} \left( x+\frac{n}{2}-k \right)
-\end{equation*}
+where $\coeffA{m}{r}$ is a real coefficient defined recursively
+\begin{equation}
+    \label{eq:definition_coefficient_a}
+    \coeffA{m}{r} =
+    \begin{cases}
+    (2r+1)
+        \binom{2r}{r} & \mathrm{if} \; r=m \\
+        (2r+1) \binom{2r}{r} \sum_{d \geq 2r+1}^{m} \coeffA{m}{d} \binom{d}{2r+1} \frac{(-1)^{d-1}}{d-r}
+        \bernoulli{2d-2r} & \mathrm{if} \; 0 \leq r<m \\
+        0 & \mathrm{if} \; r<0 \; \mathrm{or} \; r>m
+    \end{cases}
+\end{equation}
+where $\bernoulli{t}$ are Bernoulli numbers~\cite{bateman1953higher} such that $\bernoulli{1}=\frac{1}{2}$.
+For example,
+\input{sections/figures/05_fig_coefficients_a}
+Properties of coefficients $\coeffA{m}{r}$
+\begin{itemize}
+    \item $\coeffA{m}{m} = \binom{2m}{m}$
+    \item $\coeffA{m}{r} = 0$ for $m < 0$ and $r > m$
+    \item $\coeffA{m}{r} = 0$ for $r < 0$
+    \item $\coeffA{m}{r} = 0$ for $\frac{m}{2} \leq r < m$
+    \item $\coeffA{m}{0} = 1$ for $m \geq 0$
+    \item $\coeffA{m}{r}$ are integers for $m \leq 11$
+    \item Row sums: $\sum_{r=0}^{m} \coeffA{m}{r} = 2^{2m+1} - 1$
+\end{itemize}
+Therefore, by setting $a=-\frac{h}{2}$ in~\eqref{eq:odd-power-identity} we can express the growth rate of odd powers as
+\begin{align*}
+(x+h)
+    ^{2m+1}
+    = \sum_{r=0}^{m} \coeffA{m}{r} \sum_{k=-\frac{h}{2}+1}^{x+\frac{h}{2}} \left( k+\frac{h}{2} \right)^{r} \left(x-k+\frac{h}{2} \right)^{r}
+    = \sum_{r=0}^{m} \coeffA{m}{r} \sum_{k=1}^{x+h} k^r \left(x-k+h \right)^{r}
+\end{align*}
+Thus,
+\begin{align*}
+    \odv{x^{2m+1}}{x}
+    &= \lim_{h \to 0} \frac{1}{h} \left[ \sum_{r=0}^{m} \coeffA{m}{r} \sum_{k=-\frac{h}{2}+1}^{x+\frac{h}{2}} \left( k+\frac{h}{2} \right)^{r} \left(x-k+\frac{h}{2} \right)^{r}- \sum_{r=0}^{m} \coeffA{m}{r} \sum_{k=1}^{x} k^r (x-k)^r\right] \\
+    &= \lim_{h \to 0} \frac{1}{h} \left[ \sum_{r=0}^{m} \coeffA{m}{r} \left( \sum_{k=-\frac{h}{2}+1}^{x+\frac{h}{2}} \left( k+\frac{h}{2} \right)^{r} \left(x-k+\frac{h}{2} \right)^{r}- \sum_{k=1}^{x} k^r (x-k)^r \right) \right] \\
+    &= \lim_{h \to 0} \frac{1}{h} \left[ \sum_{r=0}^{m} \coeffA{m}{r} \left( \sum_{k=1}^{x+h} k^r \left(x-k+h \right)^{r} - \sum_{k=1}^{x} k^r \left(x-k \right)^{r} \right) \right]
+\end{align*}
+For instance, having $m=1,2$
+\begin{align*}
+    &\sum_{r=0}^{1} \coeffA{1}{r} \sum_{k=-\frac{h}{2}+1}^{x+\frac{h}{2}} \left( k+\frac{h}{2} \right)^{r} \left(x-k+\frac{h}{2} \right)^{r}
+    = h + x + (-1 + h + x) (h + x) (1 + h + x) \\
+    &\sum_{r=0}^{2} \coeffA{2}{r} \sum_{k=-\frac{h}{2}+1}^{x+\frac{h}{2}} \left( k+\frac{h}{2} \right)^{r} \left(x-k+\frac{h}{2} \right)^{r} \\
+    &= h + x + (h + x) (1 + h + x) (-1 + h - h^2 + h^3 + x - 2 h x + 3 h^2 x - x^2 + 3 h x^2 + x^3)
+\end{align*}
+Which further simplifies to binomial theorem.

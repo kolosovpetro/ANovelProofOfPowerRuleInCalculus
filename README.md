@@ -1,9 +1,13 @@
-# GitHub LaTeX Template
+# A novel proof of power rule in Calculus
 
-[![Build PDF](https://github.com/kolosovpetro/github-latex-template/actions/workflows/build-pdf.yml/badge.svg)](https://github.com/kolosovpetro/github-latex-template/actions/workflows/build.yml/badge.svg)
-[![Build and Deploy PDF](https://github.com/kolosovpetro/github-latex-template/actions/workflows/build-and-deploy-pdf.yml/badge.svg)](https://github.com/kolosovpetro/github-latex-template/actions/workflows/build-and-deploy.yml/badge.svg)
+## Abstract
 
-LaTeX template for GitHub including general CI/CD actions and Mathematica templates.
+In Calculus, the power rule is a fundamental result stating that the derivative of a power
+function is given by the product of the exponent and the base raised to the power of the exponent minus one.
+Typically, the power rule is proven using the limit definition of the derivative alongside the Binomial theorem.
+In this manuscript, we present an alternative approach to proving the power rule, utilizing a specific polynomial
+identity that captures the function's growth.
+This method omits the direct use of the Binomial theorem, offering a distinct way to the same result.
 
 - https://dev.azure.com/PetroKolosovProjects/github-latex-template
 
@@ -60,12 +64,3 @@ LaTeX template for GitHub including general CI/CD actions and Mathematica templa
 - `build-pdf.yml` builds project using `TeXLive`. Triggered on `pull_request`, `push` to `develop` branch
 - `build-and-deploy-pdf.yml` builds project using `TeXLive` and deploys to `GitHub Pages`. Triggered on `push` to `main`
   branch
-
-## Template example
-
-Compiled document looks like as follows
-
-<p align="center">
-  <img src="img/template_example.PNG" alt="template_example"/>
-  <img src="img/template_example2.PNG" alt="template_example"/>
-</p>

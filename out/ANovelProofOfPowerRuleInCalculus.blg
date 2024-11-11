@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: E:\RiderProjects\04_LATEX\ANovelProofOfPowerRuleInCalculus\out/ANovelProofOfPowerRuleInCalculus.aux
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+The style file: unsrt.bst
+Reallocating 'name_of_file' (item size: 1) to 33 items.
+Database file #1: ANovelProofOfPowerRuleInCalculus.bib
+You've used 7 entries,
+            1791 wiz_defined-function locations,
+            487 strings with 4976 characters,
+and the built_in function-call counts, 1058 in all, are:
+= -- 93
+> -- 28
+< -- 1
++ -- 14
+- -- 7
+* -- 32
+:= -- 173
+add.period$ -- 23
+call.type$ -- 7
+change.case$ -- 6
+chr.to.int$ -- 0
+cite$ -- 7
+duplicate$ -- 47
+empty$ -- 130
+format.name$ -- 7
+if$ -- 240
+int.to.chr$ -- 0
+int.to.str$ -- 7
+missing$ -- 4
+newline$ -- 40
+num.names$ -- 7
+pop$ -- 34
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 21
+stack$ -- 0
+substring$ -- 25
+swap$ -- 8
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 9
+width$ -- 8
+write$ -- 78
