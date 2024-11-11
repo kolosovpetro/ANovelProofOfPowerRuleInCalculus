@@ -49,6 +49,18 @@ where $\coeffA{m}{r}$ is a real coefficient defined recursively
     \end{cases}
 \end{equation}
 where $\bernoulli{t}$ are Bernoulli numbers~\cite{bateman1953higher} such that $\bernoulli{1}=\frac{1}{2}$.
+For example,
+\input{sections/figures/05_fig_coefficients_a}
+Properties of coefficients $\coeffA{m}{r}$
+\begin{itemize}
+    \item $\coeffA{m}{m} = \binom{2m}{m}$
+    \item $\coeffA{m}{r} = 0$ for $m < 0$ and $r > m$
+    \item $\coeffA{m}{r} = 0$ for $r < 0$
+    \item $\coeffA{m}{r} = 0$ for $\frac{m}{2} \leq r < m$
+    \item $\coeffA{m}{0} = 1$ for $m \geq 0$
+    \item $\coeffA{m}{r}$ are integers for $m \leq 11$
+    \item Row sums: $\sum_{r=0}^{m} \coeffA{m}{r} = 2^{2m+1} - 1$
+\end{itemize}
 Therefore, by setting $a=-\frac{h}{2}$ in~\eqref{eq:odd-power-identity} we can express the growth rate of odd powers as
 \begin{align*}
 (x+h)
@@ -60,7 +72,8 @@ Thus,
 \begin{align*}
     \odv{x^{2m+1}}{x}
     &= \lim_{h \to 0} \frac{1}{h} \left[ \sum_{r=0}^{m} \coeffA{m}{r} \sum_{k=-\frac{h}{2}+1}^{x+\frac{h}{2}} \left( k+\frac{h}{2} \right)^{r} \left(x-k+\frac{h}{2} \right)^{r}- \sum_{r=0}^{m} \coeffA{m}{r} \sum_{k=1}^{x} k^r (x-k)^r\right] \\
-    &= \lim_{h \to 0} \frac{1}{h} \left[ \sum_{r=0}^{m} \coeffA{m}{r} \left( \sum_{k=-\frac{h}{2}+1}^{x+\frac{h}{2}} \left( k+\frac{h}{2} \right)^{r} \left(x-k+\frac{h}{2} \right)^{r}- \sum_{k=1}^{x} k^r (x-k)^r \right) \right]
+    &= \lim_{h \to 0} \frac{1}{h} \left[ \sum_{r=0}^{m} \coeffA{m}{r} \left( \sum_{k=-\frac{h}{2}+1}^{x+\frac{h}{2}} \left( k+\frac{h}{2} \right)^{r} \left(x-k+\frac{h}{2} \right)^{r}- \sum_{k=1}^{x} k^r (x-k)^r \right) \right] \\
+    &= \lim_{h \to 0} \frac{1}{h} \left[ \sum_{r=0}^{m} \coeffA{m}{r} \left( \sum_{k=1}^{x+h} k^r \left(x-k+h \right)^{r} - \sum_{k=1}^{x} k^r \left(x-k \right)^{r} \right) \right]
 \end{align*}
 For instance, having $m=1,2$
 \begin{align*}

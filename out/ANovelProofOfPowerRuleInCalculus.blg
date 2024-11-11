@@ -5,44 +5,44 @@ Reallocating 'name_of_file' (item size: 1) to 6 items.
 The style file: unsrt.bst
 Reallocating 'name_of_file' (item size: 1) to 33 items.
 Database file #1: ANovelProofOfPowerRuleInCalculus.bib
-You've used 5 entries,
+You've used 7 entries,
             1791 wiz_defined-function locations,
-            477 strings with 4625 characters,
-and the built_in function-call counts, 800 in all, are:
-= -- 71
-> -- 20
+            487 strings with 4976 characters,
+and the built_in function-call counts, 1058 in all, are:
+= -- 93
+> -- 28
 < -- 1
-+ -- 10
-- -- 5
-* -- 30
-:= -- 133
-add.period$ -- 17
-call.type$ -- 5
-change.case$ -- 4
++ -- 14
+- -- 7
+* -- 32
+:= -- 173
+add.period$ -- 23
+call.type$ -- 7
+change.case$ -- 6
 chr.to.int$ -- 0
-cite$ -- 5
-duplicate$ -- 37
-empty$ -- 94
-format.name$ -- 5
-if$ -- 178
+cite$ -- 7
+duplicate$ -- 47
+empty$ -- 130
+format.name$ -- 7
+if$ -- 240
 int.to.chr$ -- 0
-int.to.str$ -- 5
+int.to.str$ -- 7
 missing$ -- 4
-newline$ -- 30
-num.names$ -- 5
-pop$ -- 22
+newline$ -- 40
+num.names$ -- 7
+pop$ -- 34
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 15
+skip$ -- 21
 stack$ -- 0
 substring$ -- 25
-swap$ -- 6
+swap$ -- 8
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 7
-width$ -- 6
-write$ -- 58
+while$ -- 9
+width$ -- 8
+write$ -- 78
