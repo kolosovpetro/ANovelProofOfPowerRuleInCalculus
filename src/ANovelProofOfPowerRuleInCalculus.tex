@@ -14,11 +14,13 @@
 \emergencystretch=1em
 \usepackage{array}
 \usepackage{etoolbox}
+\usepackage{derivative}
 \apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
 \raggedbottom
 
 \newcommand \coeffA [3][A] {{\mathbf{#1}} \sb{#2,#3}}
 \newcommand \polynomialP [4][P]{{\mathbf{#1}}\sp{#2} \sb{#3}(#4)}
+\newcommand \bernoulli [2][B] {{#1}\sb{#2}}
 
 % free foot note
 \let\svthefootnote\thefootnote
@@ -65,12 +67,12 @@
     \freefootnote{Sources: \url{https://github.com/kolosovpetro/ANovelProofOfPowerRuleInCalculus}}
 
 
-    \section{Introduction} \label{sec:introduction}
+    \section{Introduction and main results} \label{sec:introduction}
     \input{sections/02_introduction}
 
 
-    \section{Conclusions}\label{sec:conclusions}
-    \input{sections/03_conclusions}
+%    \section{Conclusions}\label{sec:conclusions}
+%    \input{sections/03_conclusions}
 
     \bibliographystyle{unsrt}
     \bibliography{ANovelProofOfPowerRuleInCalculus}

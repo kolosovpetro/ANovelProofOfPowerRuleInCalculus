@@ -4,47 +4,45 @@ The top-level auxiliary file: E:\RiderProjects\04_LATEX\ANovelProofOfPowerRuleIn
 Reallocating 'name_of_file' (item size: 1) to 6 items.
 The style file: unsrt.bst
 Reallocating 'name_of_file' (item size: 1) to 33 items.
-I found no \citation commands---while reading file E:\RiderProjects\04_LATEX\ANovelProofOfPowerRuleInCalculus\out/ANovelProofOfPowerRuleInCalculus.aux
 Database file #1: ANovelProofOfPowerRuleInCalculus.bib
-You've used 0 entries,
+You've used 5 entries,
             1791 wiz_defined-function locations,
-            445 strings with 3720 characters,
-and the built_in function-call counts, 18 in all, are:
-= -- 0
-> -- 0
-< -- 0
-+ -- 0
-- -- 0
-* -- 2
-:= -- 7
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
+            477 strings with 4625 characters,
+and the built_in function-call counts, 800 in all, are:
+= -- 71
+> -- 20
+< -- 1
++ -- 10
+- -- 5
+* -- 30
+:= -- 133
+add.period$ -- 17
+call.type$ -- 5
+change.case$ -- 4
 chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
-format.name$ -- 0
-if$ -- 1
+cite$ -- 5
+duplicate$ -- 37
+empty$ -- 94
+format.name$ -- 5
+if$ -- 178
 int.to.chr$ -- 0
-int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 3
-num.names$ -- 0
-pop$ -- 0
+int.to.str$ -- 5
+missing$ -- 4
+newline$ -- 30
+num.names$ -- 5
+pop$ -- 22
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1
+skip$ -- 15
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
-text.length$ -- 0
+substring$ -- 25
+swap$ -- 6
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 2
-(There was 1 error message)
+while$ -- 7
+width$ -- 6
+write$ -- 58

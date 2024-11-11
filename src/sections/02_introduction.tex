@@ -1,0 +1,50 @@
+Power rule can be considered as the one of the most fundamental rules in calculus.
+Most of us remember this law from the first calculus course
+\begin{align*}
+    \odv{x^n}{x} = nx^{n-1}
+\end{align*}
+where $n$ is a constant.
+One of the common strategies to prove the power rule is by utilizing limit definition
+of derivative in conjunction with binomial theorem.
+Recall the limit form of derivative
+\begin{align*}
+    \odv{f(x)}{x} = \lim_{h \to 0} \left[ \frac{f(x+h) - f(x)}{h} \right]
+\end{align*}
+where $f(x)$ is defined over $\mathbb{R}$ and at least of smoothness class $C^1$.
+Let be $f(x) = x^n$ with constant $n$.
+Then its derivative is
+\begin{align*}
+    \odv{x^n}{x} = \lim_{h \to 0} \left[ \frac{(x+h)^n - x^n}{h} \right]
+\end{align*}
+Notice that we can express the function's growth $(x+h)^n$ by using binomial theorem
+\begin{align*}
+(x+h)
+    ^n = \sum_{k=0}^{n} \binom{n}{k} x^{n-k} h^k
+\end{align*}
+So that
+\begin{align*}
+    \odv{x^n}{x} &= \lim_{h \to 0} \left[ \frac{1}{h} \sum_{k=1}^{n} \binom{n}{k} x^{n-k} h^k \right] \\
+    &= \lim_{h \to 0} \left[ \binom{n}{1} x^{n-1} +  \binom{n}{2} x^{n-2} h
+    + \binom{n}{3} x^{n-3} h^2 + \dots + \binom{n}{n} x^{0} h^n \right] \\
+    &= \binom{n}{1} x^{n-1}
+\end{align*}
+However, is the binomial theorem the only polynomial identity to express the growth rate?
+Well, not really, we can utilize different approach to express polynomial growth.
+Consider the following identity for odd powers~\cite{kolosov2024history, kolosov2016link, kolosov2022106, kolosov2023polynomial}
+\begin{align*}
+(x-2a)
+    ^{2m+1} = \sum_{r=0}^{m} \coeffA{m}{r} \sum_{k=a+1}^{x-a} (k-a)^r (x-k-a)^r
+\end{align*}
+where $\coeffA{m}{r}$ is a real coefficient defined recursively
+\begin{equation}
+    \label{eq:definition_coefficient_a}
+    \coeffA{m}{r} =
+    \begin{cases}
+    (2r+1)
+        \binom{2r}{r} & \mathrm{if} \; r=m \\
+        (2r+1) \binom{2r}{r} \sum_{d \geq 2r+1}^{m} \coeffA{m}{d} \binom{d}{2r+1} \frac{(-1)^{d-1}}{d-r}
+        \bernoulli{2d-2r} & \mathrm{if} \; 0 \leq r<m \\
+        0 & \mathrm{if} \; r<0 \; \mathrm{or} \; r>m
+    \end{cases}
+\end{equation}
+where $\bernoulli{t}$ are Bernoulli numbers~\cite{bateman1953higher} such that $\bernoulli{1}=\frac{1}{2}$.
