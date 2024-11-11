@@ -20,3 +20,4 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Adjust CI/CD
 - Add OEIS sequences to bibliography
 - Add coefficients A(m,r) table and properties
+- Update conclusion
