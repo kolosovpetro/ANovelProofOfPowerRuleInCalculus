@@ -52,12 +52,21 @@ where $\bernoulli{t}$ are Bernoulli numbers~\cite{bateman1953higher} such that $
 Therefore, by setting $a=-\frac{h}{2}$ in~\eqref{eq:odd-power-identity} we can express the growth rate of odd powers as
 \begin{align*}
 (x+h)
-    ^{2m+1} = \sum_{r=0}^{m} \coeffA{m}{r}
-    \sum_{k=-\frac{h}{2}+1}^{x+\frac{h}{2}} \left( k+\frac{h}{2} \right)^{r} \left(x-k+\frac{h}{2} \right)^{r}
+    ^{2m+1}
+    = \sum_{r=0}^{m} \coeffA{m}{r} \sum_{k=-\frac{h}{2}+1}^{x+\frac{h}{2}} \left( k+\frac{h}{2} \right)^{r} \left(x-k+\frac{h}{2} \right)^{r}
+    = \sum_{r=0}^{m} \coeffA{m}{r} \sum_{k=1}^{x+h} k^r \left(x-k+h \right)^{r}
 \end{align*}
 Thus,
 \begin{align*}
     \odv{x^{2m+1}}{x}
     &= \lim_{h \to 0} \frac{1}{h} \left[ \sum_{r=0}^{m} \coeffA{m}{r} \sum_{k=-\frac{h}{2}+1}^{x+\frac{h}{2}} \left( k+\frac{h}{2} \right)^{r} \left(x-k+\frac{h}{2} \right)^{r}- \sum_{r=0}^{m} \coeffA{m}{r} \sum_{k=1}^{x} k^r (x-k)^r\right] \\
-    &= \lim_{h \to 0} \frac{1}{h} \left[ \sum_{r=0}^{m} \coeffA{m}{r} \left( \sum_{k=-\frac{h}{2}+1}^{x+\frac{h}{2}} \left( k+\frac{h}{2} \right)^{r} \left(x-k+\frac{h}{2} \right)^{r}- \sum_{k=1}^{x} k^r (x-k)^r \right) \right] \\
+    &= \lim_{h \to 0} \frac{1}{h} \left[ \sum_{r=0}^{m} \coeffA{m}{r} \left( \sum_{k=-\frac{h}{2}+1}^{x+\frac{h}{2}} \left( k+\frac{h}{2} \right)^{r} \left(x-k+\frac{h}{2} \right)^{r}- \sum_{k=1}^{x} k^r (x-k)^r \right) \right]
 \end{align*}
+For instance, having $m=1,2$
+\begin{align*}
+    &\sum_{r=0}^{1} \coeffA{1}{r} \sum_{k=-\frac{h}{2}+1}^{x+\frac{h}{2}} \left( k+\frac{h}{2} \right)^{r} \left(x-k+\frac{h}{2} \right)^{r}
+    = h + x + (-1 + h + x) (h + x) (1 + h + x) \\
+    &\sum_{r=0}^{2} \coeffA{2}{r} \sum_{k=-\frac{h}{2}+1}^{x+\frac{h}{2}} \left( k+\frac{h}{2} \right)^{r} \left(x-k+\frac{h}{2} \right)^{r} \\
+    &= h + x + (h + x) (1 + h + x) (-1 + h - h^2 + h^3 + x - 2 h x + 3 h^2 x - x^2 + 3 h x^2 + x^3)
+\end{align*}
+Which further simplifies to binomial theorem.
